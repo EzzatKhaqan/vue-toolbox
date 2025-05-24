@@ -67,3 +67,126 @@
     }
   }
 }
+
+.layout-menu {
+  .root-menuitem {
+    list-style-type: none;
+    > .menuitem-root-text {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 10px 0;
+      color: var(--e-text-color);
+      user-select: none;
+    }
+    > a {
+      display: none;
+    }
+  }
+
+  a {
+    user-select: none;
+
+    .menuitem-text {
+      font-size: 13px;
+    }
+  }
+
+  li.active-menuitem {
+    > a {
+      .submenu-toggler {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  ul {
+    a {
+      display: flex;
+      align-items: center;
+      position: relative;
+      outline: 0 none;
+      color: var(--text-color);
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.2s, box-shadow 0.2s;
+
+      .menuitem-icon {
+        margin-right: 0.5rem;
+      }
+
+      .submenu-toggler {
+        font-size: 75%;
+        margin-left: auto;
+        transition: transform 0.2s;
+      }
+
+      &.active-route {
+        font-weight: 700;
+        color: var(--e-primary-green);
+      }
+
+      &:hover {
+        background-color: var(--e-surface-ground);
+      }
+    }
+
+    ul {
+      overflow: hidden;
+      border-radius: 5px;
+      li {
+        a {
+          margin-left: 10px;
+        }
+
+        li {
+          a {
+            margin-left: 15px;
+          }
+
+          li {
+            a {
+              margin-left: 20px;
+            }
+
+            li {
+              a {
+                margin-left: 25px;
+              }
+
+              li {
+                a {
+                  margin-left: 30px;
+                }
+
+                li {
+                  a {
+                    margin-left: 35px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.submenu-enter-from,
+.submenu-leave-to {
+  max-height: 0;
+}
+
+.submenu-leave-from,
+.submenu-enter-to {
+  max-height: 1000px;
+}
+
+.submenu-enter-active {
+  transition: max-height 1s ease-in-out;
+}
+
+.submenu-leave-active {
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+}

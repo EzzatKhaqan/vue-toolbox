@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 <template>
     <ul class="layout-menu">
-        <MenuItem v-for="(item, index) in props.model" :item="item" :root="true" :key="index" />
+        <MenuItem v-for="(item, index) in props.model" :item="item" :root="true" :key="index" :index="index" />
     </ul>
 </template>
 
